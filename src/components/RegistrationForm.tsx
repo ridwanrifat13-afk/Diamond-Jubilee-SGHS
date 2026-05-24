@@ -146,16 +146,16 @@ export default function RegistrationForm() {
         transition={{ duration: 0.6 }}
         className="w-full max-w-3xl z-10 px-2 sm:px-0"
       >
-        <Card className="shadow-[0_8px_32px_0_rgba(5,22,30,0.2)] border border-white/10 !bg-transparent backdrop-blur-3xl ring-1 ring-white/5 rounded-lg md:rounded-[2rem] overflow-hidden">
-          <CardHeader className="text-center border-b border-white/10 pb-3 md:pb-8 pt-4 md:pt-10 !bg-transparent">
+        <Card className="shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] border border-white/40 bg-white/20 backdrop-blur-xl ring-1 ring-white/30 rounded-lg md:rounded-[2rem] overflow-hidden">
+          <CardHeader className="text-center border-b border-white/20 pb-3 md:pb-8 pt-4 md:pt-10 !bg-transparent">
             <CardTitle className="text-lg md:text-4xl font-black text-[#05161E] tracking-tight">Program Registration</CardTitle>
             <p className="text-[#1D4D5F] mt-0.5 font-semibold tracking-wide uppercase text-[7px] md:text-xs">Join us in celebrating 60 years of excellence</p>
           </CardHeader>
           <CardContent className="p-3 md:p-12">
             <Tabs defaultValue="student" onValueChange={(v) => setUserType(v as any)} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-3 md:mb-10 h-8 md:h-14 bg-[#05161E]/5 p-0.5 md:p-1.5 rounded-md md:rounded-2xl">
-                <TabsTrigger value="student" className="text-xs md:text-lg font-bold rounded-sm md:rounded-xl data-[state=active]:bg-white/20 data-[state=active]:shadow-sm text-[#05161E]">Student</TabsTrigger>
-                <TabsTrigger value="teacher" className="text-xs md:text-lg font-bold rounded-sm md:rounded-xl data-[state=active]:bg-white/20 data-[state=active]:shadow-sm text-[#05161E]">Teacher</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 mb-3 md:mb-10 h-8 md:h-14 bg-white/20 border border-white/30 backdrop-blur-md p-0.5 md:p-1.5 rounded-md md:rounded-2xl">
+                <TabsTrigger value="student" className="text-xs md:text-lg font-bold rounded-sm md:rounded-xl data-[state=active]:bg-white/40 data-[state=active]:shadow-sm text-[#05161E]">Student</TabsTrigger>
+                <TabsTrigger value="teacher" className="text-xs md:text-lg font-bold rounded-sm md:rounded-xl data-[state=active]:bg-white/40 data-[state=active]:shadow-sm text-[#05161E]">Teacher</TabsTrigger>
               </TabsList>
 
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 md:space-y-8">
@@ -164,12 +164,12 @@ export default function RegistrationForm() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
                       <div className="space-y-1">
                         <Label htmlFor="nameEng" className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">Name (English)</Label>
-                        <Input id="nameEng" placeholder="Full Name" className="h-8 md:h-12 bg-white/10 border-[#05161E]/20 focus:border-[#1D4D5F] focus:bg-white/20 transition-all rounded-md md:rounded-xl placeholder:text-gray-400 text-[#05161E] text-xs" {...form.register("nameEng")} />
+                        <Input id="nameEng" placeholder="Full Name" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#05161E] text-xs shadow-inner" {...form.register("nameEng")} />
                         {form.formState.errors.nameEng && <p className="text-[7px] md:text-xs font-bold text-red-500 mt-1">{form.formState.errors.nameEng.message}</p>}
                       </div>
                       <div className="space-y-1">
                         <Label htmlFor="nameBan" className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">নাম (বাংলা)</Label>
-                        <Input id="nameBan" placeholder="পুরো নাম" className="h-8 md:h-12 bg-white/10 border-[#05161E]/20 focus:border-[#1D4D5F] focus:bg-white/20 transition-all rounded-md md:rounded-xl placeholder:text-gray-400 text-[#05161E] text-xs" {...form.register("nameBan")} />
+                        <Input id="nameBan" placeholder="পুরো নাম" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#05161E] text-xs shadow-inner" {...form.register("nameBan")} />
                         {form.formState.errors.nameBan && <p className="text-[7px] md:text-xs font-bold text-red-500 mt-1">{form.formState.errors.nameBan.message}</p>}
                       </div>
                     </div>
@@ -177,12 +177,12 @@ export default function RegistrationForm() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
                       <div className="space-y-1">
                         <Label htmlFor="mobile" className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">Mobile Number</Label>
-                        <Input id="mobile" placeholder="017XXXXXXXX" className="h-8 md:h-12 bg-white/10 border-[#05161E]/20 focus:border-[#1D4D5F] focus:bg-white/20 transition-all rounded-md md:rounded-xl placeholder:text-gray-400 text-[#05161E] text-xs" {...form.register("mobile")} />
+                        <Input id="mobile" placeholder="017XXXXXXXX" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#05161E] text-xs shadow-inner" {...form.register("mobile")} />
                         {form.formState.errors.mobile && <p className="text-[7px] md:text-xs font-bold text-red-500 mt-1">{form.formState.errors.mobile.message}</p>}
                       </div>
                       <div className="space-y-1">
                         <Label htmlFor="email" className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">Email (Optional)</Label>
-                        <Input id="email" placeholder="john@example.com" className="h-8 md:h-12 bg-white/10 border-[#05161E]/20 focus:border-[#1D4D5F] focus:bg-white/20 transition-all rounded-md md:rounded-xl placeholder:text-gray-400 text-[#05161E] text-xs" {...form.register("email")} />
+                        <Input id="email" placeholder="john@example.com" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#05161E] text-xs shadow-inner" {...form.register("email")} />
                       </div>
                     </div>
                   </div>
@@ -200,7 +200,7 @@ export default function RegistrationForm() {
                       />
                       <label
                         htmlFor="photo-upload"
-                        className="flex flex-col items-center justify-center w-full h-32 md:h-full min-h-[140px] border-2 border-dashed border-[#1D4D5F]/20 rounded-2xl bg-white/5 hover:bg-white/10 hover:border-[#1D4D5F]/40 cursor-pointer transition-all overflow-hidden"
+                        className="flex flex-col items-center justify-center w-full h-32 md:h-full min-h-[140px] border-2 border-dashed border-white/50 rounded-2xl bg-white/20 backdrop-blur-sm hover:bg-white/30 cursor-pointer transition-all overflow-hidden shadow-inner"
                       >
                         {photoPreview ? (
                           <img src={photoPreview} alt="Preview" className="w-full h-full object-cover" />
@@ -234,7 +234,7 @@ export default function RegistrationForm() {
                     {["thana", "upazilla", "postOffice", "district"].map((key) => (
                       <div key={key} className="space-y-1">
                         <Label className="capitalize text-[#1D4D5F] text-[8px] md:text-[10px] font-black uppercase tracking-widest">{key.replace(/([A-Z])/g, ' $1')}</Label>
-                        <Input className="h-8 md:h-11 bg-white/10 border-[#05161E]/20 rounded-md focus:border-[#1D4D5F] focus:bg-white/20 text-[#05161E] text-xs" {...form.register(`presentAddress.${key}` as any)} />
+                        <Input className="h-8 md:h-11 bg-white/20 border-white/40 rounded-md focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner" {...form.register(`presentAddress.${key}` as any)} />
                       </div>
                     ))}
                   </div>
@@ -249,7 +249,7 @@ export default function RegistrationForm() {
                     {["thana", "upazilla", "postOffice", "district"].map((key) => (
                       <div key={key} className="space-y-1">
                         <Label className="capitalize text-[#1D4D5F] text-[8px] md:text-[10px] font-black uppercase tracking-widest">{key.replace(/([A-Z])/g, ' $1')}</Label>
-                        <Input className="h-8 md:h-11 bg-white/10 border-[#05161E]/20 rounded-md focus:border-[#1D4D5F] focus:bg-white/20 text-[#05161E] text-xs" {...form.register(`permanentAddress.${key}` as any)} />
+                        <Input className="h-8 md:h-11 bg-white/20 border-white/40 rounded-md focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner" {...form.register(`permanentAddress.${key}` as any)} />
                       </div>
                     ))}
                   </div>
@@ -259,7 +259,7 @@ export default function RegistrationForm() {
                   <div className="space-y-1">
                     <Label className="text-[#05161E] font-bold text-[10px] md:text-sm uppercase tracking-wider">Category</Label>
                     <Select onValueChange={(v) => form.setValue("category", v as any)} defaultValue={form.getValues("category")}>
-                      <SelectTrigger className="h-9 md:h-12 bg-white/10 border-[#05161E]/20 rounded-lg focus:border-[#1D4D5F] focus:bg-white/20 text-[#05161E] text-xs">
+                      <SelectTrigger className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner">
                         <SelectValue placeholder="Select category" />
                       </SelectTrigger>
                       <SelectContent className="bg-white/80 backdrop-blur-3xl border-white/10">
@@ -280,7 +280,7 @@ export default function RegistrationForm() {
                         type="number"
                         min="0"
                         placeholder="0" 
-                        className="pl-10 h-9 md:h-12 bg-white/10 border-[#05161E]/20 rounded-lg focus:border-[#1D4D5F] focus:bg-white/20 text-[#05161E] text-xs" 
+                        className="pl-10 h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner" 
                         {...form.register("guests")} 
                       />
                     </div>
@@ -290,12 +290,12 @@ export default function RegistrationForm() {
                     <div className="grid grid-cols-2 gap-2 md:gap-4">
                       <div className="space-y-1">
                         <Label htmlFor="sscBatch" className="text-[#05161E] font-bold text-[10px] md:text-sm uppercase tracking-wider">SSC Batch</Label>
-                        <Input id="sscBatch" placeholder="2015" className="h-9 md:h-12 bg-white/10 border-[#05161E]/20 rounded-lg focus:border-[#1D4D5F] focus:bg-white/20 text-[#05161E] text-xs" {...form.register("sscBatch")} />
+                        <Input id="sscBatch" placeholder="2015" className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner" {...form.register("sscBatch")} />
                       </div>
                       <div className="space-y-1">
                         <Label className="text-[#05161E] font-bold text-[10px] md:text-sm uppercase tracking-wider">Group</Label>
                         <Select onValueChange={(v) => form.setValue("group", v as any)} defaultValue={form.getValues("group")}>
-                          <SelectTrigger className="h-9 md:h-12 bg-white/10 border-[#05161E]/20 rounded-lg focus:border-[#1D4D5F] focus:bg-white/20 text-[#05161E] text-xs">
+                          <SelectTrigger className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner">
                             <SelectValue placeholder="Group" />
                           </SelectTrigger>
                           <SelectContent className="bg-white/80 backdrop-blur-3xl border-white/10">
@@ -313,14 +313,14 @@ export default function RegistrationForm() {
                   )}
                 </div>
 
-                <div className="flex flex-col items-center justify-center p-3 md:p-8 bg-[#1D4D5F]/5 backdrop-blur-3xl rounded-lg md:rounded-[2rem] border border-white/10 shadow-inner space-y-2 md:space-y-6">
+                <div className="flex flex-col items-center justify-center p-3 md:p-8 bg-white/20 backdrop-blur-md rounded-lg md:rounded-[2rem] border border-white/30 shadow-inner space-y-2 md:space-y-6">
                   <div className="text-center">
                     <span className="text-[7px] md:text-xs font-black text-[#1D4D5F] uppercase tracking-[0.2em]">Registration Fee</span>
                     <div className="text-2xl md:text-5xl font-black text-[#05161E] mt-0.5 md:mt-2 flex items-baseline gap-1 md:gap-2">
                       {fee} <span className="text-sm md:text-2xl font-bold opacity-60">TK</span>
                     </div>
                   </div>
-                  <Button type="button" variant="outline" className="w-full md:w-auto px-6 md:px-16 h-9 md:h-14 text-xs md:text-lg font-black border-white/10 bg-white/5 hover:bg-white/10 transition-all rounded-md md:rounded-2xl shadow-sm text-[#05161E]">
+                  <Button type="button" variant="outline" className="w-full md:w-auto px-6 md:px-16 h-9 md:h-14 text-xs md:text-lg font-black border-white/40 bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all rounded-md md:rounded-2xl shadow-sm text-[#05161E]">
                     Pay Now
                   </Button>
                 </div>
