@@ -125,7 +125,7 @@ export default function RegistrationForm() {
       <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden">
         <div className="relative w-full h-full flex items-center justify-center">
           <img 
-            src="/Diamond Jubilee.webp" 
+            src="/DiamondJubilee.webp" 
             alt="Diamond Jubilee Logo" 
             className="w-full h-full object-contain scale-125"
             onError={(e) => {

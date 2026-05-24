@@ -381,7 +381,7 @@ export default function App() {
           >
             <div className="relative h-full flex items-center py-0">
               <img 
-                src="/Diamond Jubilee.webp" 
+                src="/DiamondJubilee.webp" 
                 alt="Diamond Jubilee Logo" 
                 width={80}
                 height={80}
@@ -495,7 +495,7 @@ export default function App() {
               <div className="flex items-start gap-4 md:gap-6">
                 <div className="relative shrink-0 w-16 h-16 md:w-32 md:h-32 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center border border-white/10 shadow-inner overflow-hidden group/logo">
                   <img 
-                    src="/Diamond Jubilee.webp" 
+                    src="/DiamondJubilee.webp" 
                     alt="Diamond Jubilee Logo" 
                     className="w-4/5 h-4/5 object-contain transition-transform group-hover/logo:scale-110"
                     onError={(e) => {
