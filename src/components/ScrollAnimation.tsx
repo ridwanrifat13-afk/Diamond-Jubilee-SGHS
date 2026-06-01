@@ -79,28 +79,36 @@ export default function ScrollAnimation() {
     }
   });
 
-  // Pre-load images
+  // Pre-load images lazily
   useEffect(() => {
-    let loadedCount = 0;
-    const images: HTMLImageElement[] = [];
+    const images: HTMLImageElement[] = new Array(FRAME_FILES.length);
     imagesRef.current = images;
 
-    FRAME_FILES.forEach((filename, i) => {
-      const img = new Image();
-      img.src = `/${filename}`;
+    // Load first image immediately to show canvas without delay
+    const firstImg = new Image();
+    firstImg.src = `/${FRAME_FILES[0]}`;
+    
+    const startLazyLoading = () => {
+      setImagesLoaded(true);
+      setTimeout(() => drawImage(0), 50);
       
-      const handleLoad = () => {
-        loadedCount++;
-        if (loadedCount === FRAME_FILES.length) {
-          setImagesLoaded(true);
-          setTimeout(() => drawImage(0), 50);
-        }
-      };
+      // Load the rest of the images in the background slightly delayed
+      setTimeout(() => {
+        FRAME_FILES.slice(1).forEach((filename, i) => {
+          const img = new Image();
+          // Adding query param or just loading it
+          img.src = `/${filename}`;
+          images[i + 1] = img;
+        });
+      }, 500);
+    };
 
-      img.onload = handleLoad;
-      img.onerror = handleLoad;
-      images[i] = img;
-    });
+    firstImg.onload = () => {
+      images[0] = firstImg;
+      startLazyLoading();
+    };
+    
+    firstImg.onerror = startLazyLoading;
   }, [drawImage]);
 
   // Handle resize updates
@@ -115,7 +123,7 @@ export default function ScrollAnimation() {
   }, [imagesLoaded, drawImage, frameIndex]);
 
   return (
-    <div ref={containerRef} className="relative h-[400vh] w-full bg-[#05161E]">
+    <div ref={containerRef} className="relative h-[400vh] w-full bg-[#061E29]">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* The Animation Frame */}
         <div className="relative w-full h-full">
@@ -126,17 +134,17 @@ export default function ScrollAnimation() {
           />
           
           {!imagesLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center text-white font-bold bg-[#05161E]">
+            <div className="absolute inset-0 flex items-center justify-center text-white font-bold bg-[#061E29]">
               <div className="flex flex-col items-center gap-6">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                 >
-                  <Diamond size={64} className="text-[#1D4D5F]" />
+                  <Diamond size={64} className="text-[#1D546D]" />
                 </motion.div>
                 <div className="space-y-2 text-center">
                   <p className="text-2xl tracking-widest uppercase">Diamond Jubilee</p>
-                  <p className="text-[#609194] animate-pulse">Loading Anniversary Experience...</p>
+                  <p className="text-[#5F9598] animate-pulse">Loading Anniversary Experience...</p>
                 </div>
               </div>
             </div>
@@ -153,7 +161,7 @@ export default function ScrollAnimation() {
             }}
           >
             <h2 className="text-xl md:text-7xl font-black text-white tracking-tighter drop-shadow-2xl">
-              A LEGACY OF <span className="text-[#609194]">EXCELLENCE</span>
+              A LEGACY OF <span className="text-[#5F9598]">EXCELLENCE</span>
             </h2>
             <p className="text-xs md:text-2xl text-gray-100 font-medium leading-relaxed drop-shadow-lg">
               Celebrating 60 years of nurturing minds and building futures at Shiroil Govt. High School, Rajshahi.
@@ -166,7 +174,7 @@ export default function ScrollAnimation() {
                 { year: "2017", event: "Golden Jubilee" },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center p-2 md:p-6 bg-black/20 backdrop-blur-sm rounded-lg md:rounded-2xl border border-white/10">
-                  <span className="text-lg md:text-4xl font-black text-[#609194]">{item.year}</span>
+                  <span className="text-lg md:text-4xl font-black text-[#5F9598]">{item.year}</span>
                   <span className="text-[8px] md:text-xs font-bold text-gray-300 uppercase tracking-widest mt-0.5 md:mt-2">{item.event}</span>
                 </div>
               ))}
