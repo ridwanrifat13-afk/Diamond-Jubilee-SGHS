@@ -115,11 +115,11 @@ export default function RegistrationForm() {
   };
 
   return (
-    <div className="relative min-h-screen py-20 md:py-32 px-4 flex items-center justify-center overflow-hidden bg-[#F8FAFB]">
+    <div className="relative min-h-screen py-20 md:py-32 px-4 flex items-center justify-center overflow-hidden bg-[#F3F4F4]">
       {/* Colorful Background Blobs */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#1D4D5F]/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#609194]/5 rounded-full blur-[100px] translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37]/3 rounded-full blur-[120px]"></div>
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#061E29]/10 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#1D546D]/10 rounded-full blur-[100px] translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#5F9598]/5 rounded-full blur-[120px]"></div>
 
       {/* Background Icon - Full Page Cover */}
       <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden">
@@ -148,14 +148,14 @@ export default function RegistrationForm() {
       >
         <Card className="shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] border border-white/40 bg-white/20 backdrop-blur-xl ring-1 ring-white/30 rounded-lg md:rounded-[2rem] overflow-hidden">
           <CardHeader className="text-center border-b border-white/20 pb-3 md:pb-8 pt-4 md:pt-10 !bg-transparent">
-            <CardTitle className="text-lg md:text-4xl font-black text-[#05161E] tracking-tight">Program Registration</CardTitle>
-            <p className="text-[#1D4D5F] mt-0.5 font-semibold tracking-wide uppercase text-[7px] md:text-xs">Join us in celebrating 60 years of excellence</p>
+            <CardTitle className="text-lg md:text-4xl font-black text-[#061E29] tracking-tight">Program Registration</CardTitle>
+            <p className="text-[#1D546D] mt-0.5 font-semibold tracking-wide uppercase text-[7px] md:text-xs">Join us in celebrating 60 years of excellence</p>
           </CardHeader>
           <CardContent className="p-3 md:p-12">
             <Tabs defaultValue="student" onValueChange={(v) => setUserType(v as any)} className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-3 md:mb-10 h-8 md:h-14 bg-white/20 border border-white/30 backdrop-blur-md p-0.5 md:p-1.5 rounded-md md:rounded-2xl">
-                <TabsTrigger value="student" className="text-xs md:text-lg font-bold rounded-sm md:rounded-xl data-[state=active]:bg-white/40 data-[state=active]:shadow-sm text-[#05161E]">Student</TabsTrigger>
-                <TabsTrigger value="teacher" className="text-xs md:text-lg font-bold rounded-sm md:rounded-xl data-[state=active]:bg-white/40 data-[state=active]:shadow-sm text-[#05161E]">Teacher</TabsTrigger>
+                <TabsTrigger value="student" className="text-xs md:text-lg font-bold rounded-sm md:rounded-xl data-[state=active]:bg-white/40 data-[state=active]:shadow-sm text-[#061E29]">Student</TabsTrigger>
+                <TabsTrigger value="teacher" className="text-xs md:text-lg font-bold rounded-sm md:rounded-xl data-[state=active]:bg-white/40 data-[state=active]:shadow-sm text-[#061E29]">Teacher</TabsTrigger>
               </TabsList>
 
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 md:space-y-8">
@@ -163,33 +163,33 @@ export default function RegistrationForm() {
                   <div className="md:col-span-2 space-y-3 md:space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
                       <div className="space-y-1">
-                        <Label htmlFor="nameEng" className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">Name (English)</Label>
-                        <Input id="nameEng" placeholder="Full Name" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#05161E] text-xs shadow-inner" {...form.register("nameEng")} />
+                        <Label htmlFor="nameEng" className="text-[#061E29] font-bold text-[9px] md:text-sm uppercase tracking-wider">Name (English)</Label>
+                        <Input id="nameEng" placeholder="Full Name" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#061E29] text-xs shadow-inner" {...form.register("nameEng")} />
                         {form.formState.errors.nameEng && <p className="text-[7px] md:text-xs font-bold text-red-500 mt-1">{form.formState.errors.nameEng.message}</p>}
                       </div>
                       <div className="space-y-1">
-                        <Label htmlFor="nameBan" className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">নাম (বাংলা)</Label>
-                        <Input id="nameBan" placeholder="পুরো নাম" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#05161E] text-xs shadow-inner" {...form.register("nameBan")} />
+                        <Label htmlFor="nameBan" className="text-[#061E29] font-bold text-[9px] md:text-sm uppercase tracking-wider">নাম (বাংলা)</Label>
+                        <Input id="nameBan" placeholder="পুরো নাম" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#061E29] text-xs shadow-inner" {...form.register("nameBan")} />
                         {form.formState.errors.nameBan && <p className="text-[7px] md:text-xs font-bold text-red-500 mt-1">{form.formState.errors.nameBan.message}</p>}
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
                       <div className="space-y-1">
-                        <Label htmlFor="mobile" className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">Mobile Number</Label>
-                        <Input id="mobile" placeholder="017XXXXXXXX" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#05161E] text-xs shadow-inner" {...form.register("mobile")} />
+                        <Label htmlFor="mobile" className="text-[#061E29] font-bold text-[9px] md:text-sm uppercase tracking-wider">Mobile Number</Label>
+                        <Input id="mobile" placeholder="017XXXXXXXX" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#061E29] text-xs shadow-inner" {...form.register("mobile")} />
                         {form.formState.errors.mobile && <p className="text-[7px] md:text-xs font-bold text-red-500 mt-1">{form.formState.errors.mobile.message}</p>}
                       </div>
                       <div className="space-y-1">
-                        <Label htmlFor="email" className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">Email (Optional)</Label>
-                        <Input id="email" placeholder="john@example.com" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#05161E] text-xs shadow-inner" {...form.register("email")} />
+                        <Label htmlFor="email" className="text-[#061E29] font-bold text-[9px] md:text-sm uppercase tracking-wider">Email (Optional)</Label>
+                        <Input id="email" placeholder="john@example.com" className="h-8 md:h-12 bg-white/20 border-white/40 focus:border-white focus:bg-white/30 backdrop-blur-sm transition-all rounded-md md:rounded-xl placeholder:text-gray-500 text-[#061E29] text-xs shadow-inner" {...form.register("email")} />
                       </div>
                     </div>
                   </div>
 
                   {/* Photo Upload Area */}
                   <div className="space-y-2">
-                    <Label className="text-[#05161E] font-bold text-[9px] md:text-sm uppercase tracking-wider">Profile Photo</Label>
+                    <Label className="text-[#061E29] font-bold text-[9px] md:text-sm uppercase tracking-wider">Profile Photo</Label>
                     <div className="relative group/photo">
                       <input
                         type="file"
@@ -206,8 +206,8 @@ export default function RegistrationForm() {
                           <img src={photoPreview} alt="Preview" className="w-full h-full object-cover" />
                         ) : (
                           <>
-                            <Upload className="w-8 h-8 text-[#1D4D5F] mb-2 opacity-50" />
-                            <span className="text-[10px] md:text-[11px] font-bold text-[#1D4D5F]/60 uppercase tracking-widest text-center px-2">Click to Upload Photo</span>
+                            <Upload className="w-8 h-8 text-[#1D546D] mb-2 opacity-50" />
+                            <span className="text-[10px] md:text-[11px] font-bold text-[#1D546D]/60 uppercase tracking-widest text-center px-2">Click to Upload Photo</span>
                           </>
                         )}
                       </label>
@@ -227,14 +227,14 @@ export default function RegistrationForm() {
                 {/* Addresses */}
                 <div className="space-y-3 md:space-y-6 pt-1 md:pt-4">
                   <div className="flex items-center gap-2">
-                    <div className="h-4 md:h-8 w-1 bg-[#1D4D5F] rounded-full"></div>
-                    <h3 className="font-black text-base md:text-xl text-[#05161E] tracking-tight">Present Address</h3>
+                    <div className="h-4 md:h-8 w-1 bg-[#1D546D] rounded-full"></div>
+                    <h3 className="font-black text-base md:text-xl text-[#061E29] tracking-tight">Present Address</h3>
                   </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
                     {["thana", "upazilla", "postOffice", "district"].map((key) => (
                       <div key={key} className="space-y-1">
-                        <Label className="capitalize text-[#1D4D5F] text-[8px] md:text-[10px] font-black uppercase tracking-widest">{key.replace(/([A-Z])/g, ' $1')}</Label>
-                        <Input className="h-8 md:h-11 bg-white/20 border-white/40 rounded-md focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner" {...form.register(`presentAddress.${key}` as any)} />
+                        <Label className="capitalize text-[#1D546D] text-[8px] md:text-[10px] font-black uppercase tracking-widest">{key.replace(/([A-Z])/g, ' $1')}</Label>
+                        <Input className="h-8 md:h-11 bg-white/20 border-white/40 rounded-md focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#061E29] text-xs shadow-inner" {...form.register(`presentAddress.${key}` as any)} />
                       </div>
                     ))}
                   </div>
@@ -242,14 +242,14 @@ export default function RegistrationForm() {
 
                 <div className="space-y-3 md:space-y-6 pt-1 md:pt-4">
                   <div className="flex items-center gap-2">
-                    <div className="h-4 md:h-8 w-1 bg-[#609194] rounded-full"></div>
-                    <h3 className="font-black text-base md:text-xl text-[#05161E] tracking-tight">Permanent Address</h3>
+                    <div className="h-4 md:h-8 w-1 bg-[#5F9598] rounded-full"></div>
+                    <h3 className="font-black text-base md:text-xl text-[#061E29] tracking-tight">Permanent Address</h3>
                   </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
                     {["thana", "upazilla", "postOffice", "district"].map((key) => (
                       <div key={key} className="space-y-1">
-                        <Label className="capitalize text-[#1D4D5F] text-[8px] md:text-[10px] font-black uppercase tracking-widest">{key.replace(/([A-Z])/g, ' $1')}</Label>
-                        <Input className="h-8 md:h-11 bg-white/20 border-white/40 rounded-md focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner" {...form.register(`permanentAddress.${key}` as any)} />
+                        <Label className="capitalize text-[#1D546D] text-[8px] md:text-[10px] font-black uppercase tracking-widest">{key.replace(/([A-Z])/g, ' $1')}</Label>
+                        <Input className="h-8 md:h-11 bg-white/20 border-white/40 rounded-md focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#061E29] text-xs shadow-inner" {...form.register(`permanentAddress.${key}` as any)} />
                       </div>
                     ))}
                   </div>
@@ -257,9 +257,9 @@ export default function RegistrationForm() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 pt-4 md:pt-8 border-t border-white/10">
                   <div className="space-y-1">
-                    <Label className="text-[#05161E] font-bold text-[10px] md:text-sm uppercase tracking-wider">Category</Label>
+                    <Label className="text-[#061E29] font-bold text-[10px] md:text-sm uppercase tracking-wider">Category</Label>
                     <Select onValueChange={(v) => form.setValue("category", v as any)} defaultValue={form.getValues("category")}>
-                      <SelectTrigger className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner">
+                      <SelectTrigger className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#061E29] text-xs shadow-inner">
                         <SelectValue placeholder="Select category" />
                       </SelectTrigger>
                       <SelectContent className="bg-white/80 backdrop-blur-3xl border-white/10">
@@ -270,17 +270,17 @@ export default function RegistrationForm() {
                   </div>
 
                   <div className="space-y-1">
-                    <Label htmlFor="guests" className="text-[#05161E] font-bold text-[10px] md:text-sm uppercase tracking-wider flex items-center gap-2">
+                    <Label htmlFor="guests" className="text-[#061E29] font-bold text-[10px] md:text-sm uppercase tracking-wider flex items-center gap-2">
                        Guests <span className="text-[8px] opacity-60 normal-case">(+1000 TK each)</span>
                     </Label>
                     <div className="relative">
-                      <UserPlus className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#1D4D5F] opacity-50" />
+                      <UserPlus className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#1D546D] opacity-50" />
                       <Input 
                         id="guests" 
                         type="number"
                         min="0"
                         placeholder="0" 
-                        className="pl-10 h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner" 
+                        className="pl-10 h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#061E29] text-xs shadow-inner" 
                         {...form.register("guests")} 
                       />
                     </div>
@@ -289,13 +289,13 @@ export default function RegistrationForm() {
                   {userType === "student" ? (
                     <div className="grid grid-cols-2 gap-2 md:gap-4">
                       <div className="space-y-1">
-                        <Label htmlFor="sscBatch" className="text-[#05161E] font-bold text-[10px] md:text-sm uppercase tracking-wider">SSC Batch</Label>
-                        <Input id="sscBatch" placeholder="2015" className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner" {...form.register("sscBatch")} />
+                        <Label htmlFor="sscBatch" className="text-[#061E29] font-bold text-[10px] md:text-sm uppercase tracking-wider">SSC Batch</Label>
+                        <Input id="sscBatch" placeholder="2015" className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#061E29] text-xs shadow-inner" {...form.register("sscBatch")} />
                       </div>
                       <div className="space-y-1">
-                        <Label className="text-[#05161E] font-bold text-[10px] md:text-sm uppercase tracking-wider">Group</Label>
+                        <Label className="text-[#061E29] font-bold text-[10px] md:text-sm uppercase tracking-wider">Group</Label>
                         <Select onValueChange={(v) => form.setValue("group", v as any)} defaultValue={form.getValues("group")}>
-                          <SelectTrigger className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#05161E] text-xs shadow-inner">
+                          <SelectTrigger className="h-9 md:h-12 bg-white/20 border-white/40 rounded-lg focus:border-white focus:bg-white/30 backdrop-blur-sm text-[#061E29] text-xs shadow-inner">
                             <SelectValue placeholder="Group" />
                           </SelectTrigger>
                           <SelectContent className="bg-white/80 backdrop-blur-3xl border-white/10">
@@ -308,24 +308,24 @@ export default function RegistrationForm() {
                     </div>
                   ) : (
                     <div className="flex items-end">
-                      <p className="text-[10px] font-bold text-[#1D4D5F]/60 italic pb-3 tracking-tight">Teacher Registration Mode Active</p>
+                      <p className="text-[10px] font-bold text-[#1D546D]/60 italic pb-3 tracking-tight">Teacher Registration Mode Active</p>
                     </div>
                   )}
                 </div>
 
                 <div className="flex flex-col items-center justify-center p-3 md:p-8 bg-white/20 backdrop-blur-md rounded-lg md:rounded-[2rem] border border-white/30 shadow-inner space-y-2 md:space-y-6">
                   <div className="text-center">
-                    <span className="text-[7px] md:text-xs font-black text-[#1D4D5F] uppercase tracking-[0.2em]">Registration Fee</span>
-                    <div className="text-2xl md:text-5xl font-black text-[#05161E] mt-0.5 md:mt-2 flex items-baseline gap-1 md:gap-2">
+                    <span className="text-[7px] md:text-xs font-black text-[#1D546D] uppercase tracking-[0.2em]">Registration Fee</span>
+                    <div className="text-2xl md:text-5xl font-black text-[#061E29] mt-0.5 md:mt-2 flex items-baseline gap-1 md:gap-2">
                       {fee} <span className="text-sm md:text-2xl font-bold opacity-60">TK</span>
                     </div>
                   </div>
-                  <Button type="button" variant="outline" className="w-full md:w-auto px-6 md:px-16 h-9 md:h-14 text-xs md:text-lg font-black border-white/40 bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all rounded-md md:rounded-2xl shadow-sm text-[#05161E]">
+                  <Button type="button" variant="outline" className="w-full md:w-auto px-6 md:px-16 h-9 md:h-14 text-xs md:text-lg font-black border-white/40 bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all rounded-md md:rounded-2xl shadow-sm text-[#061E29]">
                     Pay Now
                   </Button>
                 </div>
 
-                <Button type="submit" className="w-full h-10 md:h-16 text-sm md:text-xl font-black bg-[#1D4D5F] hover:bg-[#05161E] text-white shadow-[0_10px_30px_-10px_rgba(29,77,95,0.5)] rounded-md md:rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <Button type="submit" className="w-full h-10 md:h-16 text-sm md:text-xl font-black bg-[#1D546D] hover:bg-[#061E29] text-white shadow-[0_10px_30px_-10px_rgba(29,77,95,0.5)] rounded-md md:rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98]">
                   Submit Registration
                 </Button>
               </form>

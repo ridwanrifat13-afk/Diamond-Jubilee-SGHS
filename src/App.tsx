@@ -42,8 +42,9 @@ export default function App() {
             {/* Hero Section */}
             <section className="relative min-h-[50vh] md:min-h-screen flex flex-col items-center justify-center pt-16 md:pt-28 overflow-hidden bg-white">
               {/* Background Decorative Elements */}
-              <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#1D4D5F]/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2"></div>
-              <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#609194]/5 rounded-full blur-[120px] translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#1D546D]/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2"></div>
+              <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#5F9598]/10 rounded-full blur-[120px] translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-[#061E29]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
               
               {/* Line Art Background */}
               <div className="absolute inset-0 z-0 opacity-20 flex items-center justify-center pointer-events-none">
@@ -65,8 +66,8 @@ export default function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h1 className="text-2xl sm:text-5xl md:text-8xl font-black text-[#05161E] leading-tight tracking-tighter">
-                    DIAMOND <span className="text-[#1D4D5F]">JUBILEE</span>
+                  <h1 className="text-2xl sm:text-5xl md:text-8xl font-black text-[#061E29] leading-tight tracking-tighter">
+                    DIAMOND <span className="text-[#1D546D]">JUBILEE</span>
                   </h1>
                   <p className="text-sm sm:text-2xl md:text-4xl font-medium text-gray-600 mt-1 md:mt-4">
                     60 Years of Shiroil Govt. High School
@@ -90,7 +91,7 @@ export default function App() {
                 >
                   <Button 
                     size="lg" 
-                    className="w-full sm:w-auto h-9 md:h-14 px-5 md:px-10 text-sm md:text-xl font-bold rounded-full bg-[#1D4D5F] hover:bg-[#05161E] text-white shadow-xl shadow-[#1D4D5F]/20 transition-all hover:scale-105"
+                    className="w-full sm:w-auto h-9 md:h-14 px-5 md:px-10 text-sm md:text-xl font-bold rounded-full bg-[#1D546D] hover:bg-[#061E29] text-white shadow-xl shadow-[#1D546D]/20 transition-all hover:scale-105"
                     onClick={() => setCurrentPage('registration')}
                   >
                     Register Now
@@ -111,7 +112,7 @@ export default function App() {
 
               {/* Floating Elements */}
               <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-                <div className="w-1 h-12 rounded-full bg-gradient-to-b from-[#1D4D5F] to-transparent"></div>
+                <div className="w-1 h-12 rounded-full bg-gradient-to-b from-[#1D546D] to-transparent"></div>
               </div>
             </section>
 
@@ -121,28 +122,28 @@ export default function App() {
             </section>
 
             {/* Program Details Section */}
-            <section className="py-16 md:py-20 bg-[#F8FAFB] relative overflow-hidden">
+            <section className="py-16 md:py-20 bg-[#F3F4F4] relative overflow-hidden">
               {/* Decorative Background Elements */}
               <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(#1D4D5F 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+                <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(#1D546D 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
               </div>
               
               {/* Colorful Background Blobs - Adjusted for smaller layout */}
-              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#1D4D5F]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#609194]/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[120px]"></div>
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#1D546D]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#5F9598]/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#061E29]/10 rounded-full blur-[120px]"></div>
 
               <div className="container mx-auto px-4 relative z-10 max-w-6xl">
                 <div className="text-center mb-12 md:mb-16">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    className="inline-block px-3 py-1 rounded-full bg-[#609194]/10 text-[#609194] font-black uppercase tracking-[0.3em] text-[9px] mb-4"
+                    className="inline-block px-3 py-1 rounded-full bg-[#5F9598]/10 text-[#5F9598] font-black uppercase tracking-[0.3em] text-[9px] mb-4"
                   >
                     What to Expect
                   </motion.div>
-                  <h2 className="text-3xl md:text-5xl font-black text-[#05161E] tracking-tighter mb-4">Program Highlights</h2>
-                  <div className="w-20 h-1.5 bg-gradient-to-r from-[#1D4D5F] via-[#609194] to-[#D4AF37] mx-auto rounded-full"></div>
+                  <h2 className="text-3xl md:text-5xl font-black text-[#061E29] tracking-tighter mb-4">Program Highlights</h2>
+                  <div className="w-20 h-1.5 bg-gradient-to-r from-[#061E29] via-[#1D546D] to-[#5F9598] mx-auto rounded-full"></div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -151,31 +152,19 @@ export default function App() {
                       title: "Grand Reunion", 
                       desc: "Meet your old classmates and teachers in a nostalgic gathering that bridges generations.", 
                       icon: <Users size={24} />,
-                      color: "from-[#1D4D5F] to-[#2A6F85]",
-                      lightColor: "bg-[#1D4D5F]/10",
-                      accent: "text-[#1D4D5F]",
-                      glow: "group-hover:shadow-[0_20px_50px_-10px_rgba(29,77,95,0.3)]",
-                      border: "border-[#1D4D5F]/10"
+                      color: "bg-[#061E29]",
                     },
                     { 
                       title: "Cultural Night", 
                       desc: "Spectacular performances by current students and alumni showcasing our rich heritage.", 
                       icon: <Music size={24} />,
-                      color: "from-[#609194] to-[#7AB0B4]",
-                      lightColor: "bg-[#609194]/10",
-                      accent: "text-[#609194]",
-                      glow: "group-hover:shadow-[0_20px_50px_-10px_rgba(96,145,148,0.3)]",
-                      border: "border-[#609194]/10"
+                      color: "bg-[#1D546D]",
                     },
                     { 
                       title: "Exhibition", 
                       desc: "A curated journey through 60 years of school history, achievements, and milestones.", 
                       icon: <History size={24} />,
-                      color: "from-[#D4AF37] to-[#F1C40F]",
-                      lightColor: "bg-[#D4AF37]/10",
-                      accent: "text-[#D4AF37]",
-                      glow: "group-hover:shadow-[0_20px_50px_-10px_rgba(212,175,55,0.3)]",
-                      border: "border-[#D4AF37]/10"
+                      color: "bg-[#5F9598]",
                     },
                   ].map((item, i) => (
                     <motion.div 
@@ -185,25 +174,16 @@ export default function App() {
                       transition={{ delay: i * 0.1, duration: 0.6 }}
                       whileHover={{ y: -15, scale: 1.02 }}
                       whileTap={{ scale: 0.98, y: -5 }}
-                      className={`group relative p-8 bg-white rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border-2 ${item.border} transition-all duration-500 overflow-hidden ${item.glow} cursor-pointer`}
+                      className={`group relative p-8 ${item.color} rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border-2 border-transparent transition-all duration-500 overflow-hidden cursor-pointer`}
                     >
-                      {/* Interactive Background Gradient */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500`}></div>
-                      
-                      {/* Animated Floating Shapes behind content */}
-                      <div className={`absolute -top-10 -right-10 w-32 h-32 rounded-full ${item.lightColor} blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500`}></div>
-                      
                       <div className="relative z-10">
-                        <motion.div 
-                          whileHover={{ rotate: [0, -10, 10, 0] }}
-                          className={`w-16 h-16 rounded-2xl ${item.lightColor} ${item.accent} flex items-center justify-center mb-8 group-hover:bg-white/20 group-hover:text-white group-active:bg-white/20 group-active:text-white transition-all duration-500 shadow-lg`}
-                        >
+                        <div className={`w-16 h-16 rounded-2xl bg-white/20 text-white flex items-center justify-center mb-8 shadow-lg`}>
                           {item.icon}
-                        </motion.div>
-                        <h3 className="text-2xl md:text-3xl font-black text-[#05161E] mb-4 group-hover:text-white group-active:text-white transition-colors duration-500 tracking-tight leading-tight">{item.title}</h3>
-                        <p className="text-gray-600 text-sm md:text-lg leading-relaxed font-semibold group-hover:text-white/90 group-active:text-white/90 transition-colors duration-500">{item.desc}</p>
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight leading-tight">{item.title}</h3>
+                        <p className="text-white/90 text-sm md:text-lg leading-relaxed font-semibold">{item.desc}</p>
                         
-                        <div className="mt-8 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:text-white group-active:text-white transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                        <div className="mt-8 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.3em] text-white">
                           Explore Details 
                           <motion.span 
                             animate={{ x: [0, 6, 0] }} 
@@ -216,7 +196,7 @@ export default function App() {
                       </div>
 
                       {/* Large Decorative Number */}
-                      <div className="absolute -bottom-6 -right-6 text-9xl font-black text-black/[0.03] group-hover:text-white/10 group-active:text-white/10 transition-colors duration-500 select-none pointer-events-none italic">
+                      <div className="absolute -bottom-6 -right-6 text-9xl font-black text-white/10 select-none pointer-events-none italic">
                         {i + 1}
                       </div>
                     </motion.div>
@@ -230,27 +210,27 @@ export default function App() {
         return <RegistrationForm />;
       case 'partners':
         return (
-          <div className="min-h-screen pt-16 md:pt-32 pb-10 md:pb-20 bg-[#F8FAFB] relative overflow-hidden">
+          <div className="min-h-screen pt-16 md:pt-32 pb-10 md:pb-20 bg-[#F3F4F4] relative overflow-hidden">
             {/* Background Blobs */}
-            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#1D4D5F]/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[100px] translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#1D546D]/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2"></div>
+            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#5F9598]/5 rounded-full blur-[100px] translate-y-1/2 translate-x-1/2"></div>
             
             <div className="container mx-auto px-4 text-center relative z-10">
-              <h2 className="text-xl md:text-5xl font-black text-[#05161E] mb-3 md:mb-8 tracking-tighter">Our Partners</h2>
-              <div className="w-10 md:w-24 h-0.5 md:h-1.5 bg-[#1D4D5F] mx-auto mb-3 md:mb-8 rounded-full"></div>
+              <h2 className="text-xl md:text-5xl font-black text-[#061E29] mb-3 md:mb-8 tracking-tighter">Our Partners</h2>
+              <div className="w-10 md:w-24 h-0.5 md:h-1.5 bg-[#1D546D] mx-auto mb-3 md:mb-8 rounded-full"></div>
               <p className="text-xs md:text-xl text-gray-600 max-w-2xl mx-auto font-medium">
                 We are grateful to our partners who have supported us in making this Diamond Jubilee celebration possible.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 mt-8 md:mt-20">
                 {[
-                  { name: "Diamond Partner", color: "bg-[#1D4D5F]", text: "text-[#1D4D5F]", bg: "bg-[#1D4D5F]/5" },
-                  { name: "Gold Sponsor", color: "bg-[#D4AF37]", text: "text-[#D4AF37]", bg: "bg-[#D4AF37]/5" },
-                  { name: "Silver Sponsor", color: "bg-[#609194]", text: "text-[#609194]", bg: "bg-[#609194]/5" },
-                  { name: "Tech Partner", color: "bg-[#2ECC71]", text: "text-[#2ECC71]", bg: "bg-[#2ECC71]/5" },
-                  { name: "Media Ally", color: "bg-[#E67E22]", text: "text-[#E67E22]", bg: "bg-[#E67E22]/5" },
-                  { name: "Safety Hub", color: "bg-[#EF4444]", text: "text-[#EF4444]", bg: "bg-[#EF4444]/5" },
-                  { name: "Food Network", color: "bg-[#9B59B6]", text: "text-[#9B59B6]", bg: "bg-[#9B59B6]/5" },
-                  { name: "Community Link", color: "bg-[#F59E0B]", text: "text-[#F59E0B]", bg: "bg-[#F59E0B]/5" },
+                   { name: "Diamond Partner", color: "bg-[#061E29]", text: "text-[#061E29]", bg: "bg-[#061E29]/5" },
+                  { name: "Gold Sponsor", color: "bg-[#1D546D]", text: "text-[#1D546D]", bg: "bg-[#1D546D]/5" },
+                  { name: "Silver Sponsor", color: "bg-[#5F9598]", text: "text-[#5F9598]", bg: "bg-[#5F9598]/5" },
+                  { name: "Tech Partner", color: "bg-[#061E29]", text: "text-[#061E29]", bg: "bg-[#061E29]/5" },
+                  { name: "Media Ally", color: "bg-[#1D546D]", text: "text-[#1D546D]", bg: "bg-[#1D546D]/5" },
+                  { name: "Safety Hub", color: "bg-[#5F9598]", text: "text-[#5F9598]", bg: "bg-[#5F9598]/5" },
+                  { name: "Food Network", color: "bg-[#061E29]", text: "text-[#061E29]", bg: "bg-[#061E29]/5" },
+                  { name: "Community Link", color: "bg-[#1D546D]", text: "text-[#1D546D]", bg: "bg-[#1D546D]/5" },
                 ].map((item, i) => (
                   <motion.div 
                     key={i} 
@@ -259,9 +239,9 @@ export default function App() {
                     whileHover={{ scale: 1.05, y: -10 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ delay: i * 0.05 }}
-                    className={`h-28 md:h-52 ${item.bg} rounded-[1.5rem] md:rounded-[3rem] flex flex-col items-center justify-center p-4 border border-[#1D4D5F]/10 shadow-sm hover:shadow-xl hover:bg-white transition-all cursor-pointer group`}
+                    className={`h-28 md:h-52 ${item.bg} rounded-[1.5rem] md:rounded-[3rem] flex flex-col items-center justify-center p-4 border border-[#1D546D]/10 shadow-sm hover:shadow-xl transition-all cursor-pointer group`}
                   >
-                    <div className={`w-8 h-8 md:w-16 md:h-16 rounded-xl md:rounded-2xl ${item.color} mb-2 md:mb-4 opacity-20 group-hover:opacity-100 transition-opacity`}></div>
+                    <div className={`w-8 h-8 md:w-16 md:h-16 rounded-xl md:rounded-2xl ${item.color} mb-2 md:mb-4 transition-opacity`}></div>
                     <span className={`text-[9px] md:text-lg font-black tracking-tighter uppercase ${item.text}`}>{item.name}</span>
                     <span className="text-[7px] md:text-xs font-bold text-gray-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity italic">ESTD. 1967</span>
                   </motion.div>
@@ -272,11 +252,11 @@ export default function App() {
         );
       case 'contact':
         return (
-          <div className="min-h-screen pt-16 md:pt-32 pb-10 md:pb-20 bg-[#F8FAFB] relative overflow-hidden">
+          <div className="min-h-screen pt-16 md:pt-32 pb-10 md:pb-20 bg-[#F3F4F4] relative overflow-hidden">
             {/* Background Blobs for Atmosphere */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#609194]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 animate-pulse"></div>
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#1D4D5F]/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/3"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#D4AF37]/5 rounded-full blur-[100px]"></div>
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#061E29]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 animate-pulse"></div>
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#1D546D]/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/3"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#5F9598]/5 rounded-full blur-[100px]"></div>
 
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
@@ -286,11 +266,11 @@ export default function App() {
                     animate={{ opacity: 1, x: 0 }}
                     className="space-y-2 md:space-y-6"
                   >
-                    <div className="inline-block px-4 py-1.5 rounded-full bg-[#1D4D5F]/10 text-[#1D4D5F] font-black uppercase tracking-[0.3em] text-[10px] mb-2">
+                    <div className="inline-block px-4 py-1.5 rounded-full bg-[#1D546D]/10 text-[#1D546D] font-black uppercase tracking-[0.3em] text-[10px] mb-2">
                       Reach Out
                     </div>
-                    <h2 className="text-3xl md:text-6xl font-black text-[#05161E] tracking-tighter leading-none">Get in <span className="text-[#1D4D5F]">Touch</span></h2>
-                    <div className="w-24 h-2 bg-gradient-to-r from-[#1D4D5F] to-[#609194] rounded-full"></div>
+                    <h2 className="text-3xl md:text-6xl font-black text-[#061E29] tracking-tighter leading-none">Get in <span className="text-[#1D546D]">Touch</span></h2>
+                    <div className="w-24 h-2 bg-gradient-to-r from-[#061E29] to-[#5F9598] rounded-full"></div>
                     <p className="text-sm md:text-2xl text-gray-600 font-semibold leading-relaxed max-w-lg">
                       Have questions about the diamond jubilee or registration? Our team is here to assist you 24/7.
                     </p>
@@ -298,9 +278,9 @@ export default function App() {
 
                   <div className="space-y-4 md:space-y-8">
                     {[
-                      { icon: <Phone size={24} />, label: "Phone", value: "+880 1234 567890", color: "bg-[#1D4D5F]/10", text: "text-[#1D4D5F]" },
-                      { icon: <Mail size={24} />, label: "Email", value: "info@shiroiljubilee.com", color: "bg-[#609194]/10", text: "text-[#609194]" },
-                      { icon: <MapPin size={24} />, label: "Venue", value: "Shiroil Govt. High School, Rajshahi", color: "bg-[#D4AF37]/10", text: "text-[#D4AF37]" },
+                      { icon: <Phone size={24} />, label: "Phone", value: "+880 1234 567890", color: "bg-[#061E29]/10", text: "text-[#061E29]" },
+                      { icon: <Mail size={24} />, label: "Email", value: "info@shiroiljubilee.com", color: "bg-[#1D546D]/10", text: "text-[#1D546D]" },
+                      { icon: <MapPin size={24} />, label: "Venue", value: "Shiroil Govt. High School, Rajshahi", color: "bg-[#5F9598]/10", text: "text-[#5F9598]" },
                     ].map((item, i) => (
                       <motion.div 
                         key={i}
@@ -316,7 +296,7 @@ export default function App() {
                         </div>
                         <div>
                           <p className={`font-black uppercase tracking-widest text-[8px] md:text-sm ${item.text} mb-1 opacity-80`}>{item.label}</p>
-                          <p className="text-[#05161E] text-sm md:text-2xl font-black tracking-tight">{item.value}</p>
+                          <p className="text-[#061E29] text-sm md:text-2xl font-black tracking-tight">{item.value}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -327,34 +307,34 @@ export default function App() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="bg-white p-6 md:p-14 rounded-[2rem] md:rounded-[4rem] shadow-[0_20px_60px_-15px_rgba(5,22,30,0.1)] border border-[#1D4D5F]/5 relative overflow-hidden"
+                  className="bg-white p-6 md:p-14 rounded-[2rem] md:rounded-[4rem] shadow-[0_20px_60px_-15px_rgba(5,22,30,0.1)] border border-[#1D546D]/5 relative overflow-hidden"
                 >
                   {/* Decorative form accents */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#1D4D5F]/5 rounded-bl-full"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#1D546D]/5 rounded-bl-full"></div>
                   
                   <form className="space-y-4 md:space-y-8 relative z-10" onSubmit={(e) => e.preventDefault()}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                       <div className="space-y-2">
-                        <label className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-[#1D4D5F]">Your Name</label>
-                        <input className="w-full h-10 md:h-16 px-4 md:px-8 rounded-xl md:rounded-2xl bg-[#F1F3F4] border-2 border-transparent focus:bg-white focus:border-[#1D4D5F] focus:ring-4 focus:ring-[#1D4D5F]/10 transition-all outline-none text-sm md:text-lg font-bold" placeholder="Alex J." />
+                        <label className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-[#1D546D]">Your Name</label>
+                        <input className="w-full h-10 md:h-16 px-4 md:px-8 rounded-xl md:rounded-2xl bg-[#F3F4F4] border-2 border-transparent focus:bg-white focus:border-[#1D546D] focus:ring-4 focus:ring-[#1D546D]/10 transition-all outline-none text-sm md:text-lg font-bold" placeholder="Alex J." />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-[#1D4D5F]">Email Address</label>
-                        <input className="w-full h-10 md:h-16 px-4 md:px-8 rounded-xl md:rounded-2xl bg-[#F1F3F4] border-2 border-transparent focus:bg-white focus:border-[#1D4D5F] focus:ring-4 focus:ring-[#1D4D5F]/10 transition-all outline-none text-sm md:text-lg font-bold" placeholder="alex@example.com" />
+                        <label className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-[#1D546D]">Email Address</label>
+                        <input className="w-full h-10 md:h-16 px-4 md:px-8 rounded-xl md:rounded-2xl bg-[#F3F4F4] border-2 border-transparent focus:bg-white focus:border-[#1D546D] focus:ring-4 focus:ring-[#1D546D]/10 transition-all outline-none text-sm md:text-lg font-bold" placeholder="alex@example.com" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-[#1D4D5F]">Message Subject</label>
-                      <input className="w-full h-10 md:h-16 px-4 md:px-8 rounded-xl md:rounded-2xl bg-[#F1F3F4] border-2 border-transparent focus:bg-white focus:border-[#1D4D5F] focus:ring-4 focus:ring-[#1D4D5F]/10 transition-all outline-none text-sm md:text-lg font-bold" placeholder="General Inquiry" />
+                      <label className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-[#1D546D]">Message Subject</label>
+                      <input className="w-full h-10 md:h-16 px-4 md:px-8 rounded-xl md:rounded-2xl bg-[#F3F4F4] border-2 border-transparent focus:bg-white focus:border-[#1D546D] focus:ring-4 focus:ring-[#1D546D]/10 transition-all outline-none text-sm md:text-lg font-bold" placeholder="General Inquiry" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-[#1D4D5F]">How can we help?</label>
-                      <textarea rows={4} className="w-full p-4 md:p-8 rounded-xl md:rounded-3xl bg-[#F1F3F4] border-2 border-transparent focus:bg-white focus:border-[#1D4D5F] focus:ring-4 focus:ring-[#1D4D5F]/10 transition-all outline-none text-sm md:text-lg font-bold resize-none" placeholder="Your message here..." />
+                      <label className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-[#1D546D]">How can we help?</label>
+                      <textarea rows={4} className="w-full p-4 md:p-8 rounded-xl md:rounded-3xl bg-[#F3F4F4] border-2 border-transparent focus:bg-white focus:border-[#1D546D] focus:ring-4 focus:ring-[#1D546D]/10 transition-all outline-none text-sm md:text-lg font-bold resize-none" placeholder="Your message here..." />
                     </div>
                     <motion.button 
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full h-12 md:h-20 rounded-xl md:rounded-3xl bg-[#1D4D5F] hover:bg-[#05161E] text-white text-sm md:text-2xl font-black shadow-[0_15px_40px_-10px_rgba(29,77,95,0.4)] transition-all flex items-center justify-center gap-3"
+                      className="w-full h-12 md:h-20 rounded-xl md:rounded-3xl bg-[#1D546D] hover:bg-[#061E29] text-white text-sm md:text-2xl font-black shadow-[0_15px_40px_-10px_rgba(29,77,95,0.4)] transition-all flex items-center justify-center gap-3"
                     >
                       Send Message
                       <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1 }}>→</motion.span>
@@ -369,7 +349,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F1F3F4] font-sans text-[#05161E] selection:bg-[#1D4D5F]/20 selection:text-[#05161E]">
+    <div className="min-h-screen bg-[#F3F4F4] font-sans text-[#061E29] selection:bg-[#1D546D]/20 selection:text-[#061E29]">
       {/* Header */}
       <header className={`fixed left-0 right-0 z-50 pointer-events-none transition-all duration-500 ${isScrolled ? 'top-2 md:top-4' : 'top-4 md:top-6'}`}>
         <div className="container mx-auto px-4 flex items-center justify-between pointer-events-auto">
@@ -388,13 +368,13 @@ export default function App() {
                 }}
                 referrerPolicy="no-referrer"
               />
-              <div className="fallback-icon hidden w-8 h-8 md:w-10 md:h-10 bg-[#1D4D5F] rounded-full flex items-center justify-center text-white">
+              <div className="fallback-icon hidden w-8 h-8 md:w-10 md:h-10 bg-[#1D546D] rounded-full flex items-center justify-center text-white">
                 <Diamond size={20} />
               </div>
             </div>
             <div className="flex flex-col text-left">
-              <span className="block text-xs md:text-lg font-black leading-none tracking-tighter text-[#05161E]">DIAMOND JUBILEE</span>
-              <span className="text-[6px] md:text-[8px] font-bold text-[#1D4D5F] tracking-widest uppercase mt-0.5 block">60th Anniversary</span>
+              <span className="block text-xs md:text-lg font-black leading-none tracking-tighter text-[#061E29]">DIAMOND JUBILEE</span>
+              <span className="text-[6px] md:text-[8px] font-bold text-[#1D546D] tracking-widest uppercase mt-0.5 block">60th Anniversary</span>
             </div>
           </button>
 
@@ -405,7 +385,7 @@ export default function App() {
                 key={link.id}
                 onClick={() => setCurrentPage(link.id as Page)}
                 className={`text-[10px] xl:text-xs font-bold uppercase tracking-widest transition-colors px-3 xl:px-4 py-2 rounded-full hover:bg-white/20 ${
-                  currentPage === link.id ? "text-[#05161E] bg-white/40 shadow-sm" : "text-gray-700 hover:text-[#05161E]"
+                  currentPage === link.id ? "text-[#061E29] bg-white/40 shadow-sm" : "text-gray-700 hover:text-[#061E29]"
                 }`}
               >
                 {link.name}
@@ -413,7 +393,7 @@ export default function App() {
             ))}
             <Button 
               onClick={() => setCurrentPage('registration')}
-              className="rounded-full px-5 xl:px-6 font-bold bg-[#1D4D5F] hover:bg-[#05161E] text-white shadow-md ml-1 xl:ml-2"
+              className="rounded-full px-5 xl:px-6 font-bold bg-[#1D546D] hover:bg-[#061E29] text-white shadow-md ml-1 xl:ml-2"
             >
               Join Program
             </Button>
@@ -421,7 +401,7 @@ export default function App() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-3 bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full text-[#05161E] transition-colors hover:bg-white/30"
+            className="md:hidden p-3 bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full text-[#061E29] transition-colors hover:bg-white/30"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -514,35 +494,35 @@ export default function App() {
                 Celebrating six decades of academic excellence, character building, and community service at Shiroil Govt. High School, Rajshahi.
               </p>
               <div className="flex gap-3 md:gap-4">
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
+                <a href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#1D546D] flex items-center justify-center text-white transition-colors">
                   <Facebook size={16} />
                 </a>
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition-colors">
+                <a href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#5F9598] flex items-center justify-center text-white transition-colors">
                   <Youtube size={16} />
                 </a>
-                <a href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition-colors">
+                <a href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#061E29] flex items-center justify-center text-white transition-colors">
                   <Globe size={16} />
                 </a>
               </div>
             </div>
 
             <div className="space-y-4 md:space-y-6">
-              <h4 className="text-sm md:text-lg font-bold uppercase tracking-widest text-[#609194]">Venue</h4>
-              <div className="flex gap-2 md:gap-3 text-gray-400 text-xs md:text-base">
-                <MapPin className="shrink-0 text-[#609194]" size={16} />
+              <h4 className="text-sm md:text-lg font-bold uppercase tracking-widest text-[#1D546D]">Venue</h4>
+              <div className="flex gap-2 md:gap-3 text-gray-400 text-xs md:text-base cursor-pointer hover:text-white transition-colors group">
+                <MapPin className="shrink-0 text-[#1D546D] group-hover:scale-110 transition-transform" size={16} />
                 <p>Shiroil Govt. High School,<br />Rajshahi, Bangladesh</p>
               </div>
             </div>
 
             <div className="space-y-4 md:space-y-6">
-              <h4 className="text-sm md:text-lg font-bold uppercase tracking-widest text-[#609194]">Contact</h4>
+              <h4 className="text-sm md:text-lg font-bold uppercase tracking-widest text-[#5F9598]">Contact</h4>
               <div className="space-y-3 md:space-y-4">
-                <div className="flex gap-2 md:gap-3 text-gray-400 text-xs md:text-base">
-                  <Phone className="shrink-0 text-[#609194]" size={16} />
+                <div className="flex gap-2 md:gap-3 text-gray-400 text-xs md:text-base cursor-pointer hover:text-white transition-colors group">
+                  <Phone className="shrink-0 text-[#5F9598] group-hover:scale-110 transition-transform" size={16} />
                   <p>+880 1234 567890</p>
                 </div>
-                <div className="flex gap-2 md:gap-3 text-gray-400 text-xs md:text-base">
-                  <Mail className="shrink-0 text-[#609194]" size={16} />
+                <div className="flex gap-2 md:gap-3 text-gray-400 text-xs md:text-base cursor-pointer hover:text-white transition-colors group">
+                  <Mail className="shrink-0 text-[#5F9598] group-hover:scale-110 transition-transform" size={16} />
                   <p>info@shiroiljubilee.com</p>
                 </div>
               </div>

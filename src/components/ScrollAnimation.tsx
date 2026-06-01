@@ -4,7 +4,7 @@
  */
 
 import { useScroll, useTransform, motion, useMotionValueEvent } from "motion/react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { Diamond } from "lucide-react";
 
 const FRAME_FILES = [
@@ -14,7 +14,8 @@ const FRAME_FILES = [
 
 export default function ScrollAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const { scrollYProgress } = useScroll({
@@ -25,10 +26,56 @@ export default function ScrollAnimation() {
   // Map scroll progress (0 to 0.95) to frame index (0 to FRAME_FILES.length - 1)
   const frameIndex = useTransform(scrollYProgress, [0, 0.95], [0, FRAME_FILES.length - 1]);
 
+  const drawImage = useCallback((index: number) => {
+    const canvas = canvasRef.current;
+    const img = imagesRef.current[index];
+    
+    if (canvas && img && img.complete && img.naturalWidth > 0) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        const { clientWidth, clientHeight } = canvas.parentElement || window;
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5); // Cap DPR to prevent lag
+        
+        if (canvas.width !== Math.floor(clientWidth * dpr)) {
+          canvas.width = Math.floor(clientWidth * dpr);
+          canvas.style.width = `${clientWidth}px`;
+        }
+        if (canvas.height !== Math.floor(clientHeight * dpr)) {
+          canvas.height = Math.floor(clientHeight * dpr);
+          canvas.style.height = `${clientHeight}px`;
+        }
+        
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'medium';
+        
+        const isMobile = window.innerWidth < 768;
+        
+        let scale;
+        if (isMobile) {
+            scale = Math.min(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
+        } else {
+            scale = Math.max(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
+        }
+        
+        const x = (canvas.width / 2) - (img.naturalWidth / 2) * scale;
+        const y = (canvas.height / 2) - (img.naturalHeight / 2) * scale;
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.globalAlpha = 0.6;
+        ctx.drawImage(img, x, y, img.naturalWidth * scale, img.naturalHeight * scale);
+      }
+    }
+  }, []);
+
+  const rafRef = useRef<number | null>(null);
+
   useMotionValueEvent(frameIndex, "change", (latest) => {
-    const index = Math.min(Math.max(Math.round(latest), 0), FRAME_FILES.length - 1);
-    if (index !== currentFrameIndex) {
-      setCurrentFrameIndex(index);
+    if (imagesLoaded) {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+      const index = Math.min(Math.max(Math.round(latest), 0), FRAME_FILES.length - 1);
+      rafRef.current = requestAnimationFrame(() => drawImage(index));
     }
   });
 
@@ -36,15 +83,9 @@ export default function ScrollAnimation() {
   useEffect(() => {
     let loadedCount = 0;
     const images: HTMLImageElement[] = [];
-    
-    // Safety timeout
-    const timeout = setTimeout(() => {
-      if (!imagesLoaded) {
-        setImagesLoaded(true);
-      }
-    }, 5000);
+    imagesRef.current = images;
 
-    FRAME_FILES.forEach((filename) => {
+    FRAME_FILES.forEach((filename, i) => {
       const img = new Image();
       img.src = `/${filename}`;
       
@@ -52,33 +93,36 @@ export default function ScrollAnimation() {
         loadedCount++;
         if (loadedCount === FRAME_FILES.length) {
           setImagesLoaded(true);
-          clearTimeout(timeout);
+          setTimeout(() => drawImage(0), 50);
         }
       };
 
       img.onload = handleLoad;
-      img.onerror = () => {
-        handleLoad();
-      };
-      images.push(img);
+      img.onerror = handleLoad;
+      images[i] = img;
     });
-    
-    return () => clearTimeout(timeout);
-  }, []);
+  }, [drawImage]);
 
-  const frameFilename = FRAME_FILES[currentFrameIndex];
+  // Handle resize updates
+  useEffect(() => {
+    const handleResize = () => {
+      if (imagesLoaded) {
+        requestAnimationFrame(() => drawImage(Math.round(frameIndex.get())));
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [imagesLoaded, drawImage, frameIndex]);
 
   return (
     <div ref={containerRef} className="relative h-[400vh] w-full bg-[#05161E]">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* The Animation Frame */}
         <div className="relative w-full h-full">
-          <img
-            src={`/${frameFilename}`}
-            alt={`Frame ${currentFrameIndex + 1}`}
-            className="h-full w-full object-contain md:object-cover opacity-60"
-            style={{ opacity: imagesLoaded ? 0.6 : 0 }}
-            referrerPolicy="no-referrer"
+          <canvas
+            ref={canvasRef}
+            className="w-full h-full"
+            style={{ opacity: imagesLoaded ? 1 : 0, transition: 'opacity 0.5s ease-in-out' }}
           />
           
           {!imagesLoaded && (
