@@ -46,11 +46,15 @@ export default function App() {
               <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#609194]/5 rounded-full blur-[120px] translate-y-1/2 translate-x-1/2"></div>
               
               {/* Line Art Background */}
-              <div className="absolute inset-0 z-0 opacity-20 flex items-center justify-center">
+              <div className="absolute inset-0 z-0 opacity-20 flex items-center justify-center pointer-events-none">
                 <img 
                   src="/IMG_20260416_031330.webp" 
                   alt="Line Art Background" 
-                  className="w-full h-full object-contain md:object-cover"
+                  className="w-full h-full object-cover mix-blend-multiply"
+                  style={{
+                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+                    maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
+                  }}
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -367,61 +371,49 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#F1F3F4] font-sans text-[#05161E] selection:bg-[#1D4D5F]/20 selection:text-[#05161E]">
       {/* Header */}
-      <header 
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 pt-2 lg:pt-4 pointer-events-none"
-      >
-        <div className="container mx-auto px-4 flex items-center justify-between">
+      <header className={`fixed left-0 right-0 z-50 pointer-events-none transition-all duration-500 ${isScrolled ? 'top-2 md:top-4' : 'top-4 md:top-6'}`}>
+        <div className="container mx-auto px-4 flex items-center justify-between pointer-events-auto">
           <button 
             onClick={() => setCurrentPage('home')}
-            className={`flex items-center gap-2 md:gap-3 group pointer-events-auto transition-all duration-500 py-2 px-3 md:px-4 rounded-full ${
-              isScrolled 
-                ? "bg-white/30 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]" 
-                : "bg-transparent border border-transparent"
-            }`}
+            className="flex items-center gap-2 md:gap-4 group bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full py-2 px-4 md:px-6 transition-all"
           >
-            <div className="relative flex items-center h-8 md:h-10">
+            <div className="relative flex items-center justify-center">
               <img 
                 src="/DiamondJubilee.webp" 
                 alt="Diamond Jubilee Logo" 
-                width={60}
-                height={60}
-                className="h-8 md:h-10 w-auto object-contain transition-transform duration-500 md:scale-110 origin-left group-hover:scale-[1.2]"
+                className="h-8 md:h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   e.currentTarget.parentElement?.querySelector('.fallback-icon')?.classList.remove('hidden');
                 }}
                 referrerPolicy="no-referrer"
               />
-              <div className="fallback-icon hidden w-8 h-8 md:w-12 md:h-12 bg-[#1D4D5F] rounded-full flex items-center justify-center text-white">
-                <Diamond size={20} className="md:w-6 md:h-6" />
+              <div className="fallback-icon hidden w-8 h-8 md:w-10 md:h-10 bg-[#1D4D5F] rounded-full flex items-center justify-center text-white">
+                <Diamond size={20} />
               </div>
             </div>
-            <div className="flex flex-col text-left justify-center">
-              <span className="block text-sm md:text-xl font-black leading-none tracking-tighter text-[#05161E]">DIAMOND JUBILEE</span>
+            <div className="flex flex-col text-left">
+              <span className="block text-xs md:text-lg font-black leading-none tracking-tighter text-[#05161E]">DIAMOND JUBILEE</span>
+              <span className="text-[6px] md:text-[8px] font-bold text-[#1D4D5F] tracking-widest uppercase mt-0.5 block">60th Anniversary</span>
             </div>
           </button>
 
           {/* Desktop Nav */}
-          <nav className={`hidden md:flex items-center gap-6 pointer-events-auto transition-all duration-500 py-2 px-6 rounded-full ${
-            isScrolled 
-              ? "bg-white/30 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]" 
-              : "bg-transparent border border-transparent"
-          }`}>
+          <nav className="hidden md:flex items-center gap-1 xl:gap-2 bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full p-1.5 md:p-2">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => setCurrentPage(link.id as Page)}
-                className={`text-xs md:text-sm font-bold uppercase tracking-widest transition-colors hover:text-[#05161E] ${
-                  currentPage === link.id ? "text-[#05161E]" : "text-[#1D4D5F]"
+                className={`text-[10px] xl:text-xs font-bold uppercase tracking-widest transition-colors px-3 xl:px-4 py-2 rounded-full hover:bg-white/20 ${
+                  currentPage === link.id ? "text-[#05161E] bg-white/40 shadow-sm" : "text-gray-700 hover:text-[#05161E]"
                 }`}
               >
                 {link.name}
               </button>
             ))}
             <Button 
-              size="sm"
               onClick={() => setCurrentPage('registration')}
-              className="rounded-full px-5 font-bold bg-[#05161E] hover:bg-[#1D4D5F] text-white"
+              className="rounded-full px-5 xl:px-6 font-bold bg-[#1D4D5F] hover:bg-[#05161E] text-white shadow-md ml-1 xl:ml-2"
             >
               Join Program
             </Button>
@@ -429,14 +421,10 @@ export default function App() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className={`md:hidden p-2 text-[#1D4D5F] pointer-events-auto transition-all duration-500 rounded-full ${
-              isScrolled 
-                ? "bg-white/30 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]" 
-                : "bg-transparent border border-transparent"
-            }`}
+            className="md:hidden p-3 bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full text-[#05161E] transition-colors hover:bg-white/30"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </header>
@@ -448,7 +436,7 @@ export default function App() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 z-40 bg-[#F1F3F4] pt-32 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-white pt-32 px-6 md:hidden"
           >
             <nav className="flex flex-col gap-8">
               {navLinks.map((link) => (
@@ -459,12 +447,22 @@ export default function App() {
                     setIsMenuOpen(false);
                   }}
                   className={`text-3xl font-black text-left ${
-                    currentPage === link.id ? "text-[#05161E]" : "text-[#1D4D5F]"
+                    currentPage === link.id ? "text-blue-600" : "text-gray-900"
                   }`}
                 >
                   {link.name}
                 </button>
               ))}
+              <Button 
+                size="lg"
+                onClick={() => {
+                  setCurrentPage('registration');
+                  setIsMenuOpen(false);
+                }}
+                className="w-full h-16 text-xl font-bold rounded-2xl bg-blue-600"
+              >
+                Register Now
+              </Button>
             </nav>
           </motion.div>
         )}
